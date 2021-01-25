@@ -25,6 +25,19 @@ struct ContentView: View {
     
     return formatted
   }
+  
+  private var perPersonCost: String {
+    guard
+      let amount = NumberFormatter().number(from: billAmount)?.doubleValue, people > 0
+    else { return "" }
+    
+    let percentage = self.tip.percentage
+    let actualTotal = amount + (amount * percentage)
+    let perPerson = actualTotal / Double(people)
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter.string(from: NSNumber(value: perPerson)) ?? ""
+  }
 
     var body: some View {
       NavigationView {
@@ -34,7 +47,7 @@ struct ContentView: View {
           }
           
           Section {
-            Text("Each Person Owes $0.0")
+            Text("Each Person Owes \(perPersonCost)")
           }
           
           Section {
@@ -56,11 +69,10 @@ struct ContentView: View {
           }
           
           Section {
-            Text("How Many In your Party")
-            Text("\(people)")
-            Button("Add Person") {
-              self.people += 1
+            Stepper(value: $people) {
+              Text("How Many In your Party? \(people)")
             }
+            .padding()
           }
         }.navigationBarTitle(Text("WeSplit"))
       }
