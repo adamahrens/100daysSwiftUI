@@ -10,16 +10,17 @@ import SwiftUI
 
 struct ContentView: View {
   @State private var checkAmount = ""
-  @State private var people = 0
+  @State private var people = ""
   @State private var tip = 0
   
   private var totalPerPerson: String {
     guard
       let checkTotal = Double(checkAmount),
-      people > 0
+      let peeps = Int(people),
+      peeps > 0
     else { return "N/A"}
     
-    let perPerson = (checkTotal + tipAmount) / Double(people)
+    let perPerson = (checkTotal + tipAmount) / Double(peeps)
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
     return formatter.string(from: NSNumber(value: perPerson)) ?? "N/A"
@@ -31,6 +32,16 @@ struct ContentView: View {
     else { return 0.0 }
     
     return (Double(tip) / 100.0) * checkTotal
+  }
+  
+  private var checkAmountFormatted: String {
+    guard
+      let checkTotal = Double(checkAmount)
+    else { return ""}
+    
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    return formatter.string(from: NSNumber(value: checkTotal)) ?? ""
   }
   
   private var totalAmount: String {
@@ -53,7 +64,7 @@ struct ContentView: View {
         }
         
         Section {
-          Text("Enter Bill Amount: $\(checkAmount)")
+          Text("Enter Bill Amount: \(checkAmountFormatted)")
           TextField("Check Amount", text: $checkAmount)
             .keyboardType(.decimalPad)
         }
@@ -66,15 +77,12 @@ struct ContentView: View {
           }.pickerStyle(SegmentedPickerStyle())
         }
         
-        Section {
-          Picker("Number in Party", selection: $people) {
-            ForEach(0..<99) { num in
-              Text("\(num)")
-            }
-          }
+        Section(header: Text("Number of People")) {
+          TextField("People", text: $people)
+            .keyboardType(.numberPad)
         }
         
-        Section(header: Text("Total per person")) {
+        Section(header: Text("Total Amount $/person")) {
           Text(totalPerPerson)
         }
       }.navigationBarTitle("WeSplitAgain")
