@@ -14,42 +14,36 @@ struct ContentView: View {
   @State private var tip = 0
   
   private var totalPerPerson: String {
-    let formatter = NumberFormatter()
     guard
-      let checkTotal = formatter.number(from: checkAmount)?.doubleValue,
+      let checkTotal = Double(checkAmount),
       people > 0
     else { return "N/A"}
     
     let perPerson = (checkTotal + tipAmount) / Double(people)
+    let formatter = NumberFormatter()
     formatter.numberStyle = .currency
     return formatter.string(from: NSNumber(value: perPerson)) ?? "N/A"
   }
   
   private var tipAmount: Double {
-    let formatter = NumberFormatter()
     guard
-      let checkTotal = formatter.number(from: checkAmount)?.doubleValue
+      let checkTotal = Double(checkAmount)
     else { return 0.0 }
     
     return (Double(tip) / 100.0) * checkTotal
   }
   
   private var totalAmount: String {
-    let formatter = NumberFormatter()
     guard
-      let checkTotal = formatter.number(from: checkAmount)?.doubleValue
+      let checkTotal = Double(checkAmount)
     else { return "" }
     
-    if tip == 0 {
-      return "$\(checkTotal)"
-    }
-    
+    let formatter = NumberFormatter()
     formatter.numberStyle = .currency
-    
     return "\(formatter.string(from: NSNumber(value: checkTotal))!) + Tip \(formatter.string(from: NSNumber(value: tipAmount))!)"
   }
   
-  private let tips = [0, 5, 10, 15, 20, 25]
+  private let tips = [0, 5, 10, 15, 20, 25, 35]
   
   var body: some View {
     NavigationView {
