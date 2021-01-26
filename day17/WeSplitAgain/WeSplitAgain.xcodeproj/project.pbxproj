@@ -13,6 +13,7 @@
 		439ACDE525C061E900B03BFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439ACDE425C061E900B03BFB /* Assets.xcassets */; };
 		439ACDE825C061E900B03BFB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439ACDE725C061E900B03BFB /* Preview Assets.xcassets */; };
 		439ACDEB25C061E900B03BFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 439ACDE925C061E900B03BFB /* LaunchScreen.storyboard */; };
+		439ACDF325C06C4500B03BFB /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439ACDF225C06C4500B03BFB /* UIApplication+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		439ACDE725C061E900B03BFB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		439ACDEA25C061E900B03BFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		439ACDEC25C061E900B03BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		439ACDF225C06C4500B03BFB /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				439ACDE925C061E900B03BFB /* LaunchScreen.storyboard */,
 				439ACDEC25C061E900B03BFB /* Info.plist */,
 				439ACDE625C061E900B03BFB /* Preview Content */,
+				439ACDF225C06C4500B03BFB /* UIApplication+Extensions.swift */,
 			);
 			path = WeSplitAgain;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				439ACDDF25C061E800B03BFB /* AppDelegate.swift in Sources */,
 				439ACDE125C061E800B03BFB /* SceneDelegate.swift in Sources */,
+				439ACDF325C06C4500B03BFB /* UIApplication+Extensions.swift in Sources */,
 				439ACDE325C061E800B03BFB /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
