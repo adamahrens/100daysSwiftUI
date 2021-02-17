@@ -8,6 +8,33 @@
 
 import SwiftUI
 
+struct FlagImage: View {
+  
+  var imageName: String
+  
+  var body: some View {
+    Image(imageName)
+      .renderingMode(.original)
+      .clipShape(Capsule())
+      .overlay(Capsule().stroke(Color.black, lineWidth: 2.0))
+      .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 8)
+  }
+}
+
+struct GuessTitle: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .foregroundColor(.white)
+      .font(.largeTitle)
+  }
+}
+
+extension View {
+  func guessTitleStyle() -> some View {
+    self.modifier(GuessTitle())
+  }
+}
+
 struct GuessFlag: View {
   
   @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "USA"].shuffled()
@@ -28,20 +55,15 @@ struct GuessFlag: View {
             .font(.headline)
           
           Text(countries[correctAnswer])
-            .foregroundColor(.white)
-            .font(.largeTitle)
             .fontWeight(.black)
+            .guessTitleStyle()
           
           ForEach(0..<3) { number in
             Button(action: {
               // Determine if flag tapping is correct
               self.flagTapped(number: number)
             }, label: {
-              Image(self.countries[number])
-                .renderingMode(.original)
-                .clipShape(Capsule())
-                .overlay(Capsule().stroke(Color.black, lineWidth: 2.0))
-                .shadow(color: /*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/, radius: 8)
+              FlagImage(imageName: self.countries[number])
             })
           }
           
