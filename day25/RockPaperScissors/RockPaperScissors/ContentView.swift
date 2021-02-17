@@ -21,12 +21,22 @@ struct ContentView: View {
   private func calculateResult(option: String) {
     guard hideMachineSelection else { return }
     if let userSelection = options.firstIndex(of: option) {
+      
+      var first = ""
+      var second = ""
       // Array ordered according to what would win. Rock beats scissors
       let distance = userSelection - machineSelection
       if distance == 1 || distance == -2 {
         roundsWon += 1
+        
+        first = options[userSelection]
+        second = options[machineSelection]
+      } else {
+        first = options[machineSelection]
+        second = options[userSelection]
       }
       
+      winnerLabel = userSelection == machineSelection ? "Tie" : "\(first) beats \(second)"
       hideMachineSelection = false
     }
   }
@@ -34,12 +44,14 @@ struct ContentView: View {
   private func resetGame() {
     machineSelection = Int.random(in: 0...2)
     hideMachineSelection = true
+    winnerLabel = ""
   }
   
   @State private var options = ["rock", "paper", "scissors"]
   @State private var machineSelection = Int.random(in: 0...2)
   @State private var hideMachineSelection = true
   @State private var roundsWon = 0
+  @State private var winnerLabel = ""
   
   var body: some View {
     ZStack {
@@ -80,6 +92,12 @@ struct ContentView: View {
         
           ThrowImage(image: options[machineSelection])
           .hide(hideMachineSelection)
+        
+        Text(winnerLabel)
+          .font(.largeTitle)
+          .foregroundColor(.white)
+          .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+          .padding(.top, 20.0)
         
         Spacer()
         
