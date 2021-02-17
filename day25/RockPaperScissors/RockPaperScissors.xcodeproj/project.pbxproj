@@ -11,6 +11,8 @@
 		439537B025DD681100669278 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439537AF25DD681100669278 /* ContentView.swift */; };
 		439537B225DD681200669278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439537B125DD681200669278 /* Assets.xcassets */; };
 		439537B525DD681200669278 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439537B425DD681200669278 /* Preview Assets.xcassets */; };
+		43D6F67925DD804E001F4E3C /* GameOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6F67825DD804E001F4E3C /* GameOption.swift */; };
+		43D6F67D25DD8B21001F4E3C /* ThrowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6F67C25DD8B21001F4E3C /* ThrowImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		439537B125DD681200669278 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		439537B425DD681200669278 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		439537B625DD681200669278 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43D6F67825DD804E001F4E3C /* GameOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOption.swift; sourceTree = "<group>"; };
+		43D6F67C25DD8B21001F4E3C /* ThrowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				439537AD25DD681100669278 /* RockPaperScissorsApp.swift */,
 				439537AF25DD681100669278 /* ContentView.swift */,
+				43D6F67825DD804E001F4E3C /* GameOption.swift */,
+				43D6F67C25DD8B21001F4E3C /* ThrowImage.swift */,
 				439537B125DD681200669278 /* Assets.xcassets */,
 				439537B625DD681200669278 /* Info.plist */,
 				439537B325DD681200669278 /* Preview Content */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D6F67925DD804E001F4E3C /* GameOption.swift in Sources */,
 				439537B025DD681100669278 /* ContentView.swift in Sources */,
+				43D6F67D25DD8B21001F4E3C /* ThrowImage.swift in Sources */,
 				439537AE25DD681100669278 /* RockPaperScissorsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
