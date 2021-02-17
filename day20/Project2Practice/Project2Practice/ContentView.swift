@@ -12,10 +12,27 @@ struct ContentView: View {
   var body: some View {
     // Build a Grid
     HStack(alignment: .center, spacing: 20) {
+//      Color.purple.frame(width: 200, height: 200, alignment: .center)
+      Color.purple.edgesIgnoringSafeArea(.all)
       VStack {
         Text("1")
         Text("4")
         Text("7")
+        
+      }
+      
+      // RadialGradient
+      // AngularGradient
+      LinearGradient(gradient: Gradient(colors: [.red, .orange]), startPoint: .top, endPoint: .bottom)
+      
+      Button("Tap Me") {
+        // Action
+      }
+      
+      Button(action: {
+        // Action
+      }) {
+        Image("USA").renderingMode(.original)
       }
       VStack {
         Text("2")
@@ -27,7 +44,11 @@ struct ContentView: View {
         Text("6")
         Text("9")
       }
-    }
+      
+      ZStack {
+        Text("Hello")
+      }.background(Color.red)
+    }.background(AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .purple, .red]), center: .center))
   }
 }
 
