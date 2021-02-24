@@ -37,6 +37,29 @@ struct ContentView: View {
     return coffeeAmount == 1 ? "\(coffeeAmount) cup" : "\(coffeeAmount) cups"
   }
   
+  private var formattedBedTime: String {
+    let model = try! SleepCalculator(configuration: MLModelConfiguration())
+    let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUpDate)
+    
+    // Convert to seconds
+    let hour = (components.hour ?? 0) * 60 * 60
+    let minute = (components.minute ?? 0) * 60
+    let wake = Double(hour + minute)
+    // Feed to CoreML
+    if let prediction = try? model.prediction(wake: wake, estimatedSleep: sleepAmount, coffee: Double(coffeeAmount)) {
+      
+      // Convert time in seconds to subtract from a Date
+      let sleepTime = wakeUpDate - prediction.actualSleep
+      
+      // Format bedtime
+      let formatter = DateFormatter()
+      formatter.timeStyle = .medium
+      return formatter.string(from: sleepTime)
+    } else {
+      return "Need more data"
+    }
+  }
+  
   private func calculateBedtime() {
     let model = try! SleepCalculator(configuration: MLModelConfiguration())
     let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUpDate)
@@ -83,6 +106,10 @@ struct ContentView: View {
           Stepper(value: $coffeeAmount, in: 1...10, step: 1) {
             Text(formattedCoffee)
           }
+        }
+        
+        Section(header: Text("Ideal bedtime is")) {
+          Text(formattedBedTime)
         }
       }
       .navigationTitle(Text("BetterRest"))
