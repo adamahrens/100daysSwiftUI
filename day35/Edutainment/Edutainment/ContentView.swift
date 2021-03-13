@@ -8,10 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+
+  @State private var startGame = false
+  @State private var game: GameType!
+  
+  var body: some View {
+    NavigationView {
+      if startGame {
+        Game(gameType: game)
+          .animation(.easeInOut)
+          .navigationTitle(Text("Game Time!"))
+      } else {
+        GameSetup() { gameType in
+          self.game = gameType
+          self.startGame.toggle()
+        }.navigationTitle(Text("Edutainment"))
+      }
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {

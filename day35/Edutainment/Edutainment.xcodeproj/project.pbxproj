@@ -11,6 +11,10 @@
 		4324B41125ED8083007088D9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4324B41025ED8083007088D9 /* ContentView.swift */; };
 		4324B41325ED8084007088D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4324B41225ED8084007088D9 /* Assets.xcassets */; };
 		4324B41625ED8084007088D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4324B41525ED8084007088D9 /* Preview Assets.xcassets */; };
+		4324B41F25ED9160007088D9 /* QuestionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4324B41E25ED9160007088D9 /* QuestionCount.swift */; };
+		4324B42325ED9198007088D9 /* GameSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4324B42225ED9198007088D9 /* GameSetup.swift */; };
+		4324B42625ED943E007088D9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4324B42525ED943E007088D9 /* Game.swift */; };
+		43E6499025FBDC6A0058235B /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E6498F25FBDC6A0058235B /* GameType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		4324B41225ED8084007088D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4324B41525ED8084007088D9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4324B41725ED8084007088D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4324B41E25ED9160007088D9 /* QuestionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCount.swift; sourceTree = "<group>"; };
+		4324B42225ED9198007088D9 /* GameSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetup.swift; sourceTree = "<group>"; };
+		4324B42525ED943E007088D9 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		43E6498F25FBDC6A0058235B /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			children = (
 				4324B40E25ED8083007088D9 /* EdutainmentApp.swift */,
 				4324B41025ED8083007088D9 /* ContentView.swift */,
+				4324B42225ED9198007088D9 /* GameSetup.swift */,
+				4324B41E25ED9160007088D9 /* QuestionCount.swift */,
+				4324B42525ED943E007088D9 /* Game.swift */,
+				43E6498F25FBDC6A0058235B /* GameType.swift */,
 				4324B41225ED8084007088D9 /* Assets.xcassets */,
 				4324B41725ED8084007088D9 /* Info.plist */,
 				4324B41425ED8084007088D9 /* Preview Content */,
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4324B41F25ED9160007088D9 /* QuestionCount.swift in Sources */,
+				4324B42625ED943E007088D9 /* Game.swift in Sources */,
+				4324B42325ED9198007088D9 /* GameSetup.swift in Sources */,
 				4324B41125ED8083007088D9 /* ContentView.swift in Sources */,
 				4324B40F25ED8083007088D9 /* EdutainmentApp.swift in Sources */,
+				43E6499025FBDC6A0058235B /* GameType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
