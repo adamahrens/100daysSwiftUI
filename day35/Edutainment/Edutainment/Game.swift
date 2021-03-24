@@ -11,11 +11,13 @@ struct Game: View {
   let gameType: GameType
   
   // Map of questions answered and if correct or not
-  @State private var answered = [Question: Bool]()
+  @State private var answered = [Question: Answer]()
   
   private func backgroundColor(for question: Question) -> Color {
-    if let answered = answered[question] {
-      if answered {
+    if let answer = answered[question] {
+      if answer == .correct && question.isCorrect {
+        return Color.green
+      } else if answer == .wrong && !question.isCorrect {
         return Color.green
       } else {
         return Color.red
@@ -25,55 +27,50 @@ struct Game: View {
     return Color.white
   }
   
+  private func answer(question: Question, with answer: Answer) {
+    self.answered[question] = answer
+  }
+  
   var body: some View {
     List {
       ForEach(gameType.questions, id: \.self.id) { question in
-        let didAnswer = answered[question]
-        HStack {
-          if let _ = didAnswer {
-            Text(question.display)
-              .font(.title)
-              .foregroundColor(.white)
-          } else {
-            Text(question.display)
-              .font(.title)
-            
-            Spacer()
-            
-            Button("Correct") {
-              if question.isCorrect {
-                self.answered[question] = true
-              } else {
-                self.answered[question] = false
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8.0, content: {
+          HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8.0, content: {
+            if let _ = self.answered[question] {
+              Text(question.display)
+                .font(.title)
+                .foregroundColor(.white)
+            } else {
+              VStack {
+                Text(question.display)
+                  .font(.title)
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8.0, content: {
+                  Button("Correct") {
+                    self.answer(question: question, with: .correct)
+                  }
+                  .font(.title3)
+                  .foregroundColor(.green)
+                  .padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                  .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                      .stroke(Color.green, lineWidth: 1)
+                  )
+                  
+                  Button("Wrong") {
+                    self.answer(question: question, with: .wrong)
+                  }
+                  .font(.title3)
+                  .foregroundColor(.red)
+                  .padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                  .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                      .stroke(Color.red, lineWidth: 1)
+                  )
+                })
               }
             }
-            .font(.title3)
-            .foregroundColor(.green)
-            .padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            .overlay(
-              RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.green, lineWidth: 1)
-            )
-            
-            Spacer()
-            
-            Button("Wrong") {
-              if question.isCorrect == false {
-                self.answered[question] = true
-              } else {
-                self.answered[question] = false
-              }
-            }
-            .font(.title3)
-            .foregroundColor(.red)
-            .padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            .overlay(
-              RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.red, lineWidth: 1)
-            )
-          }
-        }
-        .padding()
+          })
+        })
         .background(self.backgroundColor(for: question))
       }
     }.listStyle(GroupedListStyle())

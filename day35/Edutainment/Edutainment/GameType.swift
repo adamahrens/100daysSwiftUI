@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum Answer: Equatable {
+  case correct
+  case wrong
+}
+
 struct Question: Hashable {
   let id: UUID
   let first: Int
