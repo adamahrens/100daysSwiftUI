@@ -11,6 +11,8 @@
 		43D65690261F4D980056FD46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6568F261F4D980056FD46 /* ContentView.swift */; };
 		43D65692261F4D980056FD46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D65691261F4D980056FD46 /* Assets.xcassets */; };
 		43D65695261F4D980056FD46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D65694261F4D980056FD46 /* Preview Assets.xcassets */; };
+		43D6569E261F622A0056FD46 /* Scrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6569D261F622A0056FD46 /* Scrolling.swift */; };
+		43D656A2261F65350056FD46 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D656A1261F65350056FD46 /* Navigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		43D65691261F4D980056FD46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43D65694261F4D980056FD46 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43D65696261F4D980056FD46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43D6569D261F622A0056FD46 /* Scrolling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrolling.swift; sourceTree = "<group>"; };
+		43D656A1261F65350056FD46 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				43D6568D261F4D980056FD46 /* MoonShotApp.swift */,
 				43D6568F261F4D980056FD46 /* ContentView.swift */,
+				43D6569D261F622A0056FD46 /* Scrolling.swift */,
+				43D656A1261F65350056FD46 /* Navigation.swift */,
 				43D65691261F4D980056FD46 /* Assets.xcassets */,
 				43D65696261F4D980056FD46 /* Info.plist */,
 				43D65693261F4D980056FD46 /* Preview Content */,
@@ -140,6 +146,8 @@
 			files = (
 				43D65690261F4D980056FD46 /* ContentView.swift in Sources */,
 				43D6568E261F4D980056FD46 /* MoonShotApp.swift in Sources */,
+				43D6569E261F622A0056FD46 /* Scrolling.swift in Sources */,
+				43D656A2261F65350056FD46 /* Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

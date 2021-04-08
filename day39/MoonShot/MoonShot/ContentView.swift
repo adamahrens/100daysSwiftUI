@@ -9,8 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+      VStack {
+        // GeometryReader to fill a container
+        GeometryReader { g in
+          Image("Computer")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: g.size.width)
+        }
+        Image("Computer")
+          .frame(width: 300, height: 300)
+          .clipped()
+        Image("Computer")
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+          .frame(width: 300, height: 300)
+      }
     }
 }
 
