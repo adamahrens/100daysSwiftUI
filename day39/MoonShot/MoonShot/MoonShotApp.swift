@@ -13,7 +13,8 @@ struct MoonShotApp: App {
         WindowGroup {
 //            ContentView()
 //          Scrolling()
-          Navigation()
+//          Navigation()
+          MoonApp()
         }
     }
 }
