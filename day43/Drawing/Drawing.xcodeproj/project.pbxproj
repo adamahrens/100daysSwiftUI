@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43171E1E262679C90050CCAC /* AnimateShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43171E1D262679C90050CCAC /* AnimateShapes.swift */; };
 		4318C7652624AA4D0050D988 /* DrawingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4318C7642624AA4D0050D988 /* DrawingApp.swift */; };
 		4318C7672624AA4D0050D988 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4318C7662624AA4D0050D988 /* ContentView.swift */; };
 		4318C7692624AA4F0050D988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4318C7682624AA4F0050D988 /* Assets.xcassets */; };
 		4318C76C2624AA4F0050D988 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4318C76B2624AA4F0050D988 /* Preview Assets.xcassets */; };
+		43F7FD702624B0C800BE91D3 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FD6F2624B0C800BE91D3 /* Shapes.swift */; };
+		43F7FD742624BEC000BE91D3 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FD732624BEC000BE91D3 /* Flower.swift */; };
+		43F7FD772624C8AC00BE91D3 /* ImagePaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7FD762624C8AC00BE91D3 /* ImagePaint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43171E1D262679C90050CCAC /* AnimateShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateShapes.swift; sourceTree = "<group>"; };
 		4318C7612624AA4D0050D988 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4318C7642624AA4D0050D988 /* DrawingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApp.swift; sourceTree = "<group>"; };
 		4318C7662624AA4D0050D988 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4318C7682624AA4F0050D988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4318C76B2624AA4F0050D988 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4318C76D2624AA4F0050D988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43F7FD6F2624B0C800BE91D3 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		43F7FD732624BEC000BE91D3 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
+		43F7FD762624C8AC00BE91D3 /* ImagePaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePaint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			children = (
 				4318C7642624AA4D0050D988 /* DrawingApp.swift */,
 				4318C7662624AA4D0050D988 /* ContentView.swift */,
+				43F7FD6F2624B0C800BE91D3 /* Shapes.swift */,
+				43F7FD732624BEC000BE91D3 /* Flower.swift */,
+				43F7FD762624C8AC00BE91D3 /* ImagePaint.swift */,
+				43171E1D262679C90050CCAC /* AnimateShapes.swift */,
 				4318C7682624AA4F0050D988 /* Assets.xcassets */,
 				4318C76D2624AA4F0050D988 /* Info.plist */,
 				4318C76A2624AA4F0050D988 /* Preview Content */,
@@ -139,7 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4318C7672624AA4D0050D988 /* ContentView.swift in Sources */,
+				43171E1E262679C90050CCAC /* AnimateShapes.swift in Sources */,
+				43F7FD772624C8AC00BE91D3 /* ImagePaint.swift in Sources */,
 				4318C7652624AA4D0050D988 /* DrawingApp.swift in Sources */,
+				43F7FD742624BEC000BE91D3 /* Flower.swift in Sources */,
+				43F7FD702624B0C800BE91D3 /* Shapes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
